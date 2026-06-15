@@ -4,6 +4,9 @@ body {
 
     margin: 0 !important;
     padding: 0 !important;
+
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Cabeçalho */
@@ -16,14 +19,23 @@ header {
     padding: 0;
     box-sizing: border-box;
 
-    z-index: 0;
+    z-index: 999;
     position: fixed;
     top: 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    
+    transition: transform 0.4s ease-in-out; 
 }
+
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
 
 .header-content {
     width: 100%;
@@ -144,4 +156,117 @@ a {
     color: black;
     text-decoration: none;
     font-family: arial, sans-serif;
+}
+
+.container-content {
+    width: 100%;
+    max-width: 600px;
+
+    gap: 8px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* bannerInicio */
+
+/* bannerInicio */
+.banner {
+    width: 100%;
+    height: 180vh; /* <--- Controla a altura do banner (60% da tela). Altere para pixels (ex: 500px) se preferir fixo */
+    position: relative;
+    overflow: hidden; /* <--- Corta qualquer sobra de imagem para não invadir o Quem Somos */
+    background-color: #000;
+}
+
+.banner-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Garante que a imagem se adapte perfeitamente à altura do banner sem distorcer */
+.img_projeto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* <--- Preenche o espaço cortando as sobras de forma inteligente */
+    border-radius: 0;  /* Banners de largura total geralmente ficam melhores sem borda arredondada */
+}
+
+/* Ajuste do texto para garantir que ele fique centralizado ou na parte de baixo, sem bater no header */
+.banner-textC {
+    position: absolute;
+    bottom: 60%; /* Afasta o texto do rodapé da tela */
+    left: 30%;
+    color: black;
+    z-index: 3;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 600px;
+}
+
+.banner-textE {
+    position: absolute;
+    bottom: 70%; /* Afasta o texto do rodapé da tela */
+    left: 30%;
+    color: rgb(255, 255, 255);
+    z-index: 3;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 600px;
+}
+
+main {
+    position: relative;
+    z-index: 10; /* Garante que o conteúdo fique acima do fundo do banner */
+    background-color: #fff; /* Cria uma base sólida para cobrir os slides que estão absolutos */
+    padding-top: 40px; /* Dá um respiro entre o banner e o Quem Somos */
+}
+
+.img_projeto {
+    width: 100%;
+    height: 1250px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container-main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.quem-somos {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    z-index: 0;
+}
+.container-quem-somos{
+    background-color: rgb(192, 184, 182);
+
 }

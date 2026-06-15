@@ -16,7 +16,7 @@
                     <img src="./assets/Adobe Express - file (1).png" alt="logo" class="logo">
                 </a>
                 <div class="nav-links">
-                    <a href="#sobre">Sobre</a>
+                    <a href="#sobre">Quem Somos</a>
                     <a href="#projetos">Projetos</a>
                     <a href="#contato">Contato</a>
                     <a href="https://api.whatsapp.com/send?phone=11984551030" target="_blank" rel="noopener noreferrer"
@@ -35,14 +35,90 @@
                 </div>
         </nav>
         </div>
-
-
     </header>
+
+
+    <section class="banner" id="inicio">
+        <div class="banner-container">
+            <div class="slide active">
+                <img src="./assets/Projeto 01/WhatsApp Image 2024-08-30 at 15.41.30.jpeg" alt="Projeto 1"
+                    class="img_projeto">
+                <div class="banner-textC">
+                    <h1>Projetos Residenciais de Alto Padrão</h1>
+                    <p>Arquitetura contemporânea que reflete a sua identidade.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="./assets/Projeto 02/068A6864.jpg" alt="Projeto 2" class="img_projeto">
+                <div class="banner-textE">
+                    <h1>Design de Interiores Exclusivo</h1>
+                    <p>Sofisticação e conforto em cada detalhe.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="./assets/Projeto 02/068A6844.jpg" alt="Projeto 3" class="img_projeto">
+                <div class="banner-textC">
+                    <h1>Espaços Corporativos Eficientes</h1>
+                    <p>Ambientes planejados para inspirar produtividade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+    <section id="sobre">
+        <div class="quem-somos">
+            <h2>Quem Somos</h2>
+
+
+
+            <p>A Regale Construtora é uma empresa especializada em projetos residenciais de alto padrão, design de
+                interiores exclusivo e espaços corporativos eficientes. Com uma equipe de profissionais experientes,
+                oferecemos soluções personalizadas que refletem a identidade e as necessidades de nossos clientes.</p>
+        </div>
+    </section>
+    </main>
 </body>
 <script>
-    function irParaWpp() {
-        window.location.href = "https://api.whatsapp.com/send?phone=11984551030"; // Substitua pelo número de telefone desejado
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const slideInterval = 5000; // Tempo em milissegundos (5 segundos)
+
+    function nextSlide() {
+        // Remove a classe ativa do slide atual
+        slides[currentSlide].classList.remove('active');
+
+        // Passa para o próximo slide (e volta pro zero se chegar no fim)
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        // Adiciona a classe ativa no novo slide
+        slides[currentSlide].classList.add('active');
     }
+
+    // Inicia o temporizador automático
+    setInterval(nextSlide, slideInterval);
+
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+
+            header.classList.add('hidden');
+        } else {
+
+            header.classList.remove('hidden');
+        }
+
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
 </script>
 
 </html>
