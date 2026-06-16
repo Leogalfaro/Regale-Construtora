@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Regale Construtora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./assets/Captura de Tela 2026-06-15 às 18.18.05.png">
 </head>
 
 <body>
@@ -17,6 +21,7 @@
                 </a>
                 <div class="nav-links">
                     <a href="#sobre">Quem Somos</a>
+                    <a href="#servicos">Experiência</a>
                     <a href="#projetos">Projetos</a>
                     <a href="#contato">Contato</a>
                     <a href="https://api.whatsapp.com/send?phone=11984551030" target="_blank" rel="noopener noreferrer"
@@ -41,7 +46,7 @@
     <section class="banner" id="inicio">
         <div class="banner-container">
             <div class="slide active">
-                <img src="./assets/Projeto 01/WhatsApp Image 2024-08-30 at 15.41.30.jpeg" alt="Projeto 1"
+                <img src="./assets/IMG_6144.jpeg" alt="Projeto 1"
                     class="img_projeto">
                 <div class="banner-textC">
                     <h1>Projetos Residenciais de Alto Padrão</h1>
@@ -67,19 +72,58 @@
         </div>
     </section>
 
-    <main>
-    <section id="sobre">
-        <div class="quem-somos">
-            <h2>Quem Somos</h2>
+    <main class="container-main">
+        <section id="sobre">
+            <div class="sobre-flex-container">
 
+                <div class="container-somos">
+                    <div class="quem-somos">
+                        <h1>Quem Somos</h1>
+                        <p>A Regale nasceu da união entre a experiência de Eduardo Galfaro, engenheiro civil com mais de
+                            25 anos de atuação e pós-graduado pela USP, e a visão moderna de Thiago Neri, gestor de
+                            obras com trajetória em renomados escritórios de arquitetura. Especializada em reformas e
+                            construções de alto padrão, a Regale alia excelência técnica, atenção aos detalhes e
+                            compromisso com a realização de sonhos, transformando projetos em espaços que marcam
+                            histórias e gerações.</p>
+                    </div>
+                </div>
 
+                <div class="container-ceos">
 
-            <p>A Regale Construtora é uma empresa especializada em projetos residenciais de alto padrão, design de
-                interiores exclusivo e espaços corporativos eficientes. Com uma equipe de profissionais experientes,
-                oferecemos soluções personalizadas que refletem a identidade e as necessidades de nossos clientes.</p>
-        </div>
-    </section>
+                </div>
+
+            </div>
+        </section>
+        <section>
+
+        </section>
     </main>
+    <section id="servicos">
+        <div class="container-obras-sucesso">
+            <div class="container-obras">
+                <div class="container-obras-flex">
+                    <div class="card-obras-realizadas">
+                        <div class="margin">
+                            <h2 class="h2">+100</h2>
+
+                            <h3>OBRAS REALIZADAS</h3>
+                        </div>
+                    </div>
+                    <div class="card-experiencia">
+                        <h2 class="h2">+25</h2>
+
+                            <h3>ANOS DE EXPERIÊNCIA</h3>
+                    </div>
+                    <div class="card-escritorios">
+                        <h2 class="h2">+20</h2>
+
+                            <h3>ESCRITÓRIOS ATENDIDOS</h3>
+                    </div>
+                </div>
+
+
+            </div>
+    </section>
 </body>
 <script>
     const slides = document.querySelectorAll('.slide');
@@ -118,6 +162,7 @@
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
+
 
 </script>
 

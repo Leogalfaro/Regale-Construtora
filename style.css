@@ -1,12 +1,20 @@
+@import url('https://fonts.cdnfonts.com/css/urbanist');
+@import url('https://fonts.cdnfonts.com/css/dolce-vita-heavy');
+@import url('https://fonts.cdnfonts.com/css/nexa');
+
+html,
 body {
-    background-color: rgb(255, 255, 255);
-    font-family: lorem, ips, um;
+    background-color: rgb(192, 184, 182);
+    ;
+    font-family: 'Urbanist', sans-serif;
 
     margin: 0 !important;
     padding: 0 !important;
 
     scroll-behavior: smooth;
     overflow-x: hidden;
+
+    color: rgb(24, 37, 50);
 }
 
 /* Cabeçalho */
@@ -27,8 +35,8 @@ header {
     justify-content: center;
     align-items: center;
 
-    
-    transition: transform 0.4s ease-in-out; 
+
+    transition: transform 0.4s ease-in-out;
 }
 
 
@@ -155,7 +163,7 @@ a {
     font-size: 18px;
     color: black;
     text-decoration: none;
-    font-family: arial, sans-serif;
+    font-family: 'Urbanist', sans-serif;
 }
 
 .container-content {
@@ -170,13 +178,12 @@ a {
 
 /* bannerInicio */
 
-/* bannerInicio */
 .banner {
     width: 100%;
-    height: 180vh; /* <--- Controla a altura do banner (60% da tela). Altere para pixels (ex: 500px) se preferir fixo */
+    height: 100vh;
     position: relative;
-    overflow: hidden; /* <--- Corta qualquer sobra de imagem para não invadir o Quem Somos */
-    background-color: #000;
+    overflow: hidden;
+    background-color: rgb(192, 184, 182);
 }
 
 .banner-container {
@@ -201,47 +208,49 @@ a {
     z-index: 2;
 }
 
-/* Garante que a imagem se adapte perfeitamente à altura do banner sem distorcer */
+/* Gradiente em cima da imagem, não no .banner */
+.slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.5) 25%,
+        rgba(0, 0, 0, 0) 50%);
+    z-index: 1;
+}
+
+/* Apenas UMA definição de .img_projeto */
 .img_projeto {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* <--- Preenche o espaço cortando as sobras de forma inteligente */
-    border-radius: 0;  /* Banners de largura total geralmente ficam melhores sem borda arredondada */
+    object-fit: fill !important;       /* ← isso é essencial */
+    object-position: center;
+    display: block;
+
+
 }
 
-/* Ajuste do texto para garantir que ele fique centralizado ou na parte de baixo, sem bater no header */
-.banner-textC {
-    position: absolute;
-    bottom: 60%; /* Afasta o texto do rodapé da tela */
-    left: 30%;
-    color: black;
-    z-index: 3;
-    font-family: 'Montserrat', sans-serif;
-    max-width: 600px;
-}
-
+.banner-textC,
 .banner-textE {
     position: absolute;
-    bottom: 70%; /* Afasta o texto do rodapé da tela */
-    left: 30%;
-    color: rgb(255, 255, 255);
-    z-index: 3;
-    font-family: 'Montserrat', sans-serif;
+    bottom: 5%;
+    left: 10%;
+    color: rgb(255, 255, 255); /* ← branco para aparecer */
+    z-index: 3;                /* ← acima do ::after */
+    font-family: 'Urbanist', sans-serif;
     max-width: 600px;
+    font-size: 20px;
 }
 
 main {
     position: relative;
-    z-index: 10; /* Garante que o conteúdo fique acima do fundo do banner */
-    background-color: #fff; /* Cria uma base sólida para cobrir os slides que estão absolutos */
-    padding-top: 40px; /* Dá um respiro entre o banner e o Quem Somos */
-}
-
-.img_projeto {
-    width: 100%;
-    height: 1250px;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+    /* Garante que o conteúdo fique acima do fundo do banner */
+    /* background-color: rgb#fff; */
+    /* Cria uma base sólida para cobrir os slides que estão absolutos */
+    padding-top: 40px;
+    /* Dá um respiro entre o banner e o Quem Somos */
 }
 
 .container-main {
@@ -254,19 +263,203 @@ main {
     gap: 8px;
 }
 
+.container-somos {
+
+    /* background-color: rgb(192, 184, 182); */
+    width: 60%;
+    height: 50vh;
+    padding: 16px;
+    border-radius: 8px;
+
+    display: flex;
+}
+
+.container-somos:hover {
+    /* background-color: rgb(192, 184, 182); */
+    width: 60%;
+    height: 50vh;
+    padding: 16px;
+    border-radius: 8px;
+
+    display: flex;
+
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
 .quem-somos {
     width: 100%;
     height: 100%;
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
+
+    font-size: 25px;
 
     display: flex;
     flex-direction: column;
     gap: 8px;
 
+    text-align: justify;
+
     z-index: 0;
 }
-.container-quem-somos{
+
+.container-ceos {
+    background-image: url('./assets/068A8077.jpg');
+    background-size: cover;
+    width: 30%;
+    height: 70vh;
+    padding: 16px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+
+    z-index: 0;
+}
+
+.sobre-flex-container {
+    width: 100%;
+    max-width: 1200px;
+    /* Alinha com o limite do restante do seu site */
+    margin: 0 auto;
+    /* Centraliza o bloco inteiro na página */
+    padding: 60px 20px;
+
+    display: flex;
+    /* ATIVA O LADO A LADO */
+    flex-direction: row;
+    /* Garante que fiquem em linha */
+    justify-content: center;
+    /* Centraliza os dois blocos na tela */
+    gap: 200px;
+    /* Controla o espaçamento de separação entre os dois quadrados */
+}
+
+.container-ceos:hover {
+
+    background-size: cover;
+    width: 30%;
+    height: 70vh;
+    padding: 16px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+
+    z-index: 0;
+
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+}
+
+.container-obras-sucesso {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+
+    background-image: url('./assets/IMG_0297.jpeg');
+    background-size: cover;
+    background-position: center;
     background-color: rgb(192, 184, 182);
 
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.container-obras-flex {
+    width: 100%;
+    max-width: 1200px;
+    /* Alinha com o limite do restante do seu site */
+    margin: 0 auto;
+    /* Centraliza o bloco inteiro na página */
+    padding: 60px 20px;
+
+
+    display: flex;
+    /* ATIVA O LADO A LADO */
+    flex-direction: row;
+    /* Garante que fiquem em linha */
+    justify-content: center;
+    /* Centraliza os dois blocos na tela */
+    gap: 70px;
+    /* Controla o espaçamento de separação entre os dois quadrados */
+}
+
+.card-obras-realizadas {
+    width: 200%;
+    height: 25vh;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 450px;
+    background-color: rgba(194, 194, 194, 0.685);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    gap: 0px;
+
+    padding: 16px;
+}
+
+.card-experiencia {
+    width: 200%;
+    height: 25vh;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 450px;
+
+    background-color: rgba(194, 194, 194, 0.4);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0px;
+
+    padding: 16px;
+}
+
+.card-escritorios {
+    width: 200%;
+    height: 25vh;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 450px;
+
+    background-color: rgba(194, 194, 194, 0.4);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0px;
+
+    padding: 16px;
+}
+
+.margin {
+    margin: fit-content;
+}
+
+.h2 {
+    font-size: 80px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: 'Dolce Vita Heavy', sans-serif;
+}
+
+h1 {
+    font-family: 'Dolce Vita Heavy', sans-serif;
+}
+
+p {
+    font-family: 'Nexa', sans-serif;
 }
