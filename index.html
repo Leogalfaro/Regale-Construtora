@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./assets/Captura de Tela 2026-06-15 às 18.18.05.png">
+    <link rel="icon" type="image/png" href="./assets/Captura de Tela 2026-06-16 às 17.30.58.png">
 </head>
 
 <body>
@@ -46,8 +46,7 @@
     <section class="banner" id="inicio">
         <div class="banner-container">
             <div class="slide active">
-                <img src="./assets/IMG_6144.jpeg" alt="Projeto 1"
-                    class="img_projeto">
+                <img src="./assets/IMG_6144.jpeg" alt="Projeto 1" class="img_projeto">
                 <div class="banner-textC">
                     <h1>Projetos Residenciais de Alto Padrão</h1>
                     <p>Arquitetura contemporânea que reflete a sua identidade.</p>
@@ -55,7 +54,7 @@
             </div>
 
             <div class="slide">
-                <img src="./assets/Projeto 02/068A6864.jpg" alt="Projeto 2" class="img_projeto">
+                <img src="./assets/mata/068A6864.jpg" alt="Projeto 2" class="img_projeto">
                 <div class="banner-textE">
                     <h1>Design de Interiores Exclusivo</h1>
                     <p>Sofisticação e conforto em cada detalhe.</p>
@@ -63,7 +62,7 @@
             </div>
 
             <div class="slide">
-                <img src="./assets/Projeto 02/068A6844.jpg" alt="Projeto 3" class="img_projeto">
+                <img src="./assets/mata/068A6844.jpg" alt="Projeto 3" class="img_projeto">
                 <div class="banner-textC">
                     <h1>Espaços Corporativos Eficientes</h1>
                     <p>Ambientes planejados para inspirar produtividade.</p>
@@ -72,7 +71,7 @@
         </div>
     </section>
 
-    <main class="container-main">
+    <main>
         <section id="sobre">
             <div class="sobre-flex-container">
 
@@ -112,18 +111,153 @@
                     <div class="card-experiencia">
                         <h2 class="h2">+25</h2>
 
-                            <h3>ANOS DE EXPERIÊNCIA</h3>
+                        <h3>ANOS DE EXPERIÊNCIA</h3>
                     </div>
                     <div class="card-escritorios">
                         <h2 class="h2">+20</h2>
 
-                            <h3>ESCRITÓRIOS ATENDIDOS</h3>
+                        <h3>ESCRITÓRIOS ATENDIDOS</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projetos">
+        <div class="container-projetos">
+            <div class="texto-heritage">
+                <h1>HERITAGE</h1>
+            </div>
+            <div class="container-projetos-flex">
+                <div class="planta-heritage">
+                    <img src="./assets/0rAQcGEJJSCR7bwglrpjab42A4o.avif" alt="planta-heritage"
+                        class="img-planta-heritage">
+                </div>
+                <div class="galeria-projeto">
+                    <button class="btn-nav anterior" onclick="mudarFoto(-1, 'principal')">&#8592;</button>
+
+                    <div class="galeria-container" id="galeria-principal">
+                        <img src="./assets/pedro/PHOTO-2024-10-10-16-00-34(1).jpg" alt="Foto 1"
+                            class="foto-galeria active">
+                        <img src="./assets/pedro/PHOTO-2024-10-10-16-00-34(2).jpg" alt="Foto 2" class="foto-galeria">
+                        <img src="./assets/pedro/PHOTO-2024-10-10-16-00-34(3).jpg" alt="Foto 3" class="foto-galeria">
+                        <img src="./assets/pedro/PHOTO-2024-10-10-16-00-34(4).jpg" alt="Foto 4" class="foto-galeria">
+                        <img src="./assets/pedro/PHOTO-2024-10-10-16-00-34(5).jpg" alt="Foto 5" class="foto-galeria">
+                    </div>
+
+                    <button class="btn-nav proximo" onclick="mudarFoto(1, 'principal')">&#8594;</button>
+
+                    <div class="galeria-contador">
+                        <span id="foto-atual-principal">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VER MAIS -->
+            <div class="ver-mais-container">
+                <button class="btn-ver-mais" onclick="toggleOutrasObras()">
+                    Ver mais obras <span id="icone-ver-mais">&#8595;</span>
+                </button>
+            </div>
+
+            <!-- OUTRAS OBRAS -->
+            <div class="outras-obras" id="outras-obras">
+
+                <!-- Obra 2 -->
+                <div class="obra-item">
+                    <h2 class="obra-titulo">Duplex Itam Bibi</h2>
+                    <div class="galeria-projeto">
+                        <button class="btn-nav anterior" onclick="mudarFoto(-1, 'obra2')">&#8592;</button>
+                        <div class="galeria-container" id="galeria-obra2">
+                            <img src="./assets/mata/068A6703.jpg" alt="Foto 1" class="foto-galeria active">
+                            <img src="./assets/mata/068A6704.jpg" alt="Foto 2" class="foto-galeria">
+                        </div>
+                        <button class="btn-nav proximo" onclick="mudarFoto(1, 'obra2')">&#8594;</button>
+                        <div class="galeria-contador">
+                            <span id="foto-atual-obra2">1</span>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Obra 3 -->
+                <div class="obra-item">
+                    <h2 class="obra-titulo">Apartamento Jardim Europa</h2>
+                    <div class="galeria-projeto">
+                        <button class="btn-nav anterior" onclick="mudarFoto(-1, 'obra3')">&#8592;</button>
+                        <div class="galeria-container" id="galeria-obra3">
+                            <img src="./assets/mirian/WhatsApp Image 2024-08-30 at 15.41.31 (3).jpeg" alt="Foto 1"
+                                class="foto-galeria active">
+                            <img src="./assets/mirian/WhatsApp Image 2024-08-30 at 15.41.31 (2).jpeg" alt="Foto 2"
+                                class="foto-galeria">
+                            <img src="./assets/mirian/WhatsApp Image 2024-08-30 at 15.41.31 (1).jpeg" alt="Foto 3"
+                                class="foto-galeria">
+                        </div>
+                        <button class="btn-nav proximo" onclick="mudarFoto(1, 'obra3')">&#8594;</button>
+                        <div class="galeria-contador">
+                            <span id="foto-atual-obra3">1</span>
+                        </div>
+                    </div>
+                </div>
 
             </div>
+        </div>
     </section>
+    <footer class="site-footer" id="contato">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <div class="footer-logo">
+            <img src="./assets/Adobe Express - file (1).png" alt="Regale Construtora" class="footer-logo-img">
+        </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-copyright">
+            <p>Regale Construtora © 2026 – Todos os direitos reservados - Site construído por Leonardo Galfaro</p>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-contacts">
+            <div class="contact-item">
+                <span class="contact-name">Eduardo Galfaro:</span>
+                <span class="contact-phone">(11) 98455-1030</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-name">Thiago Neri:</span>
+                <span class="contact-phone">(11) 94016-3753</span>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-socials">
+                       <a href="https://www.instagram.com/regaleconstrutora/" class="footer-social-link" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/regaleconstrutora/" class="footer-social-link" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+            </a>
+            <a href="https://wa.me/5511984551030" class="footer-social-link" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32" fill="none"
+                    aria-hidden="true">
+                    <path
+                        d="M16 2C8.268 2 2 8.268 2 16c0 2.48.67 4.8 1.84 6.8L2 30l7.4-1.82A13.93 13.93 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z"
+                        fill="#2c2c2a" />
+                    <path
+                        d="M23.07 19.44c-.36-.18-2.12-1.04-2.45-1.16-.33-.12-.57-.18-.81.18-.24.36-.93 1.16-1.14 1.4-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.89-1.78-1.07-.95-1.79-2.12-2-2.48-.21-.36-.02-.55.16-.73.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.95-1.11-2.67-.29-.7-.59-.6-.81-.61l-.69-.01c-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.54 3.88 6.16 5.44.86.37 1.53.59 2.05.76.86.27 1.64.23 2.26.14.69-.1 2.12-.87 2.42-1.71.3-.84.3-1.56.21-1.71-.09-.15-.33-.24-.69-.42z"
+                        fill="#fff" />
+                </svg>
+        </div>
+    </div>
+</footer>
 </body>
 <script>
     const slides = document.querySelectorAll('.slide');
@@ -163,6 +297,38 @@
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
+    // Controla o índice atual de cada galeria
+    const indices = {};
+
+    function mudarFoto(direcao, galeriaId) {
+        const container = document.getElementById('galeria-' + galeriaId);
+        const fotos = container.querySelectorAll('.foto-galeria');
+        const contador = document.getElementById('foto-atual-' + galeriaId);
+
+        if (!(galeriaId in indices)) indices[galeriaId] = 0;
+
+        fotos[indices[galeriaId]].classList.remove('active');
+        indices[galeriaId] = (indices[galeriaId] + direcao + fotos.length) % fotos.length;
+        fotos[indices[galeriaId]].classList.add('active');
+
+        contador.textContent = indices[galeriaId] + 1;
+    }
+
+    function toggleOutrasObras() {
+        const obras = document.getElementById('outras-obras');
+        const icone = document.getElementById('icone-ver-mais');
+        const btn = document.querySelector('.btn-ver-mais');
+
+        obras.classList.toggle('aberto');
+
+        if (obras.classList.contains('aberto')) {
+            icone.innerHTML = '&#8593;';
+            btn.childNodes[0].textContent = 'Ver menos obras ';
+        } else {
+            icone.innerHTML = '&#8595;';
+            btn.childNodes[0].textContent = 'Ver mais obras ';
+        }
+    }
 
 </script>
 

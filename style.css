@@ -6,7 +6,7 @@ html,
 body {
     background-color: rgb(192, 184, 182);
     ;
-    font-family: 'Urbanist', sans-serif;
+    font-family: 'Dolce', sans-serif;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -143,13 +143,18 @@ nav a:hover {
 }
 
 #projetos {
-    top: 45vh;
-    scroll-behavior: smooth;
+    scroll-behavior: 45vh;
 }
 
 #contato {
     top: 60vh;
     scroll-behavior: smooth;
+}
+
+
+section {
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 
@@ -183,6 +188,7 @@ a {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    touch-action: pan-y;
     background-color: rgb(192, 184, 182);
 }
 
@@ -214,9 +220,9 @@ a {
     position: absolute;
     inset: 0;
     background: linear-gradient(to top,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.5) 25%,
-        rgba(0, 0, 0, 0) 50%);
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.5) 25%,
+            rgba(0, 0, 0, 0) 50%);
     z-index: 1;
 }
 
@@ -224,7 +230,8 @@ a {
 .img_projeto {
     width: 100%;
     height: 100%;
-    object-fit: fill !important;       /* ← isso é essencial */
+    object-fit: fill !important;
+    /* ← isso é essencial */
     object-position: center;
     display: block;
 
@@ -236,9 +243,11 @@ a {
     position: absolute;
     bottom: 5%;
     left: 10%;
-    color: rgb(255, 255, 255); /* ← branco para aparecer */
-    z-index: 3;                /* ← acima do ::after */
-    font-family: 'Urbanist', sans-serif;
+    color: rgb(255, 255, 255);
+    /* ← branco para aparecer */
+    z-index: 3;
+    /* ← acima do ::after */
+    font-family: 'Dolce', sans-serif;
     max-width: 600px;
     font-size: 20px;
 }
@@ -246,21 +255,10 @@ a {
 main {
     position: relative;
     z-index: 10;
-    /* Garante que o conteúdo fique acima do fundo do banner */
-    /* background-color: rgb#fff; */
-    /* Cria uma base sólida para cobrir os slides que estão absolutos */
-    padding-top: 40px;
-    /* Dá um respiro entre o banner e o Quem Somos */
-}
-
-.container-main {
+    padding: 0;
+    margin: 0;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    overflow-x: hidden;
 }
 
 .container-somos {
@@ -368,6 +366,7 @@ main {
     background-color: rgb(192, 184, 182);
 
     overflow: hidden;
+    touch-action: pan-y;
 
     display: flex;
     flex-direction: column;
@@ -411,6 +410,24 @@ main {
     padding: 16px;
 }
 
+.card-obras-realizadas:hover {
+    width: 200%;
+    height: 25vh;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+
+    z-index: 0;
+
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+}
+
 .card-experiencia {
     width: 200%;
     height: 25vh;
@@ -426,6 +443,24 @@ main {
     gap: 0px;
 
     padding: 16px;
+}
+
+.card-experiencia:hover {
+    width: 200%;
+    height: 25vh;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+
+    z-index: 0;
+
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
 }
 
 .card-escritorios {
@@ -445,6 +480,24 @@ main {
     padding: 16px;
 }
 
+.card-escritorios:hover {
+    width: 200%;
+    height: 25vh;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+
+    z-index: 0;
+
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+}
+
 .margin {
     margin: fit-content;
 }
@@ -462,4 +515,441 @@ h1 {
 
 p {
     font-family: 'Nexa', sans-serif;
+}
+
+.texto-heritage {
+    padding: 16px;
+    margin-left: 50px;
+
+    font-size: 20px;
+}
+
+.container-projetos {
+    width: 100%;
+    height: auto;        /* ← troque min-height por height: auto */
+    margin: 0;
+    padding: 0;
+    background-color: rgb(192, 184, 182);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.container-projetos-flex {
+    width: 100%;
+    max-width: 1200px;
+    /* Alinha com o limite do restante do seu site */
+    margin: 0 auto;
+    /* Centraliza o bloco inteiro na página */
+    padding: 60px 20px;
+
+
+    display: flex;
+    /* ATIVA O LADO A LADO */
+    flex-direction: row;
+    /* Garante que fiquem em linha */
+    justify-content: flex-start;
+    /* Centraliza os dois blocos na tela */
+    gap: 100px;
+    /* Controla o espaçamento de separação entre os dois quadrados */
+}
+
+.planta-heritage {
+    width: 90%;
+    height: 70vh;
+
+    background-color: #2c2c2a;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+
+    border-radius: 10px;
+    border: 40px;
+
+}
+
+.img-planta-heritage {
+    width: 100%;
+    height: 100%;
+}
+
+/* galeria de fotos */
+
+.galeria-projeto {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(192, 184, 182);
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.galeria-container {
+    width: 80%;
+    height: 100%;
+    position: relative;
+}
+
+.foto-galeria {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.foto-galeria.active {
+    opacity: 1;
+}
+
+.btn-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    font-size: 28px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-nav:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.btn-nav.anterior {
+    left: 20px;
+}
+
+.btn-nav.proximo {
+    right: 20px;
+}
+
+.galeria-contador {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 6px 16px;
+    border-radius: 999px;
+}
+
+/* Galeria das outras obras */
+.outras-obras {
+    display: none;
+    flex-direction: column;
+    gap: 60px;
+    padding: 40px 20px;
+    width: 100%;        /* ← garante largura total */
+    max-width: 100%;    /* ← remove o limite de 1200px que estava estreitando */
+    box-sizing: border-box;
+}
+
+.outras-obras.aberto {
+    display: flex;
+}
+
+.obra-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;        /* ← ocupa toda a largura */
+}
+
+.obra-item .galeria-projeto {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(192, 184, 182);
+    overflow: hidden;
+    touch-action: pan-y;
+    box-sizing: border-box;
+    padding: 0 60px;    /* ← abre espaço para as setas nas laterais */
+}
+
+.obra-item .galeria-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.obra-item .foto-galeria {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.obra-item .foto-galeria.active {
+    opacity: 1;
+}
+
+/* Setas fora da imagem, dentro do padding */
+.obra-item .btn-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(44, 44, 42, 0.15);
+    backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(44, 44, 42, 0.3);
+    color: rgb(24, 37, 50);
+    font-size: 28px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.obra-item .btn-nav.anterior {
+    left: 0px;   /* ← fica no padding, fora da imagem */
+}
+
+.obra-item .btn-nav.proximo {
+    right: 0px;  /* ← fica no padding, fora da imagem */
+}
+
+.obra-item .btn-nav:hover {
+    background: rgba(44, 44, 42, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Ver mais */
+
+.ver-mais-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;  /* ← reduza o padding */
+    background: transparent;
+}
+
+.btn-ver-mais {
+    background: transparent;
+    border: 1.5px solid #3a3a3a;
+    border-radius: 999px;
+    padding: 14px 36px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    color: rgb(24, 37, 50);
+}
+
+.btn-ver-mais:hover {
+    background: #e8e4e3;
+    transform: scale(1.05);
+}
+
+/* Outras obras — começa escondido */
+.outras-obras {
+    display: none;
+    flex-direction: column;
+    gap: 60px;
+    padding: 40px 20px;
+    margin: 0 auto;
+}
+
+.outras-obras.aberto {
+    display: flex;
+}
+
+.obra-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.obra-titulo {
+    font-family: 'Dolce Vita Heavy', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: rgb(24, 37, 50);
+}
+
+/* Importação do FontAwesome para os ícones funcionarem (caso não tenha no projeto) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+.site-footer {
+    background-color: #11161d; /* Tom escuro idêntico ao da imagem */
+    color: #ffffff;
+    font-family: 'Urbanist', sans-serif;
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    gap: 20px;
+}
+
+/* Divisórias Verticais */
+.footer-divider {
+    width: 1px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2); /* Linha sutil branca */
+}
+
+/* Estilização da Logo (Simulada em texto baseada na imagem) */
+.logo-placeholder {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.logo-placeholder .logo-r {
+    font-weight: 800;
+    margin-right: -3px;
+}
+.logo-placeholder .sub-logo {
+    display: block;
+    font-size: 10px;
+    text-transform: lowercase;
+    margin-top: -5px;
+    text-align: right;
+    opacity: 0.7;
+}
+
+/* Texto de Copyright */
+.footer-copyright {
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Bloco de Contatos */
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-name {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.contact-phone {
+    font-weight: 300;
+}
+
+/* Ícones Sociais */
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    opacity: 0.8;
+}
+
+.footer-socials a:hover {
+    opacity: 1;
+}
+
+/* Ícone do WhatsApp com fundo circular sutil (opcional, como na foto) */
+.footer-socials a.whatsapp-icon {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo-img {
+    height: 40px;
+    width: auto;
+    opacity: 0.75;
+    filter: brightness(0) invert(1); /* ← deixa a logo branca */
+    transition: opacity 0.2s;
+}
+
+.footer-logo-img:hover {
+    opacity: 1;
+}
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+    
+    .footer-divider {
+        display: none; /* Esconde as linhas verticais no mobile */
+    }
+
+    .contact-item {
+        align-items: center;
+    }
 }
