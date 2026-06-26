@@ -939,19 +939,655 @@ p {
     opacity: 1;
 }
 
-/* --- RESPONSIVIDADE PARA CELULARES --- */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-    }
-    
-    .footer-divider {
-        display: none; /* Esconde as linhas verticais no mobile */
+/* ============================================================
+   Responsividade para tablet e celulares
+   ============================================================ */
+
+@media (max-width: 1024px) {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
     }
 
+    html {
+        scroll-padding-top: 130px;
+    }
+
+    body {
+        min-width: 0;
+    }
+
+    header {
+        height: auto;
+        min-height: 96px;
+        padding: 8px 0;
+    }
+
+    nav {
+        height: auto;
+        justify-content: center;
+    }
+
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        padding: 0 16px;
+    }
+
+    .logo {
+        width: min(190px, 24vw);
+        margin: 0;
+        padding: 4px;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px 18px;
+    }
+
+    nav a {
+        font-size: 15px;
+        line-height: 1.15;
+        text-align: center;
+    }
+
+    .btn-whatsapp {
+        min-height: 42px;
+        padding: 10px 18px;
+        gap: 8px;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+    }
+
+    section {
+        scroll-margin-top: 130px;
+    }
+
+    .img_projeto {
+        object-fit: cover !important;
+    }
+
+    .banner-textC,
+    .banner-textE {
+        left: 6%;
+        right: 6%;
+        bottom: 7%;
+        max-width: 560px;
+        font-size: 18px;
+    }
+
+    .banner-textC h1,
+    .banner-textE h1 {
+        font-size: 34px;
+        line-height: 1.08;
+        margin: 0 0 10px;
+    }
+
+    .banner-textC p,
+    .banner-textE p {
+        font-size: 16px;
+        line-height: 1.45;
+        margin: 0;
+    }
+
+    .sobre-flex-container,
+    .container-obras-flex,
+    .container-projetos-flex {
+        max-width: 100%;
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    .sobre-flex-container {
+        gap: 44px;
+    }
+
+    .container-somos {
+        width: 58%;
+        height: auto;
+    }
+
+    .quem-somos {
+        font-size: 19px;
+        line-height: 1.48;
+    }
+
+    .container-ceos {
+        width: 42%;
+        height: auto;
+        min-height: 460px;
+        background-position: center top;
+    }
+
+    .container-obras-flex {
+        gap: 24px;
+    }
+
+    .card-obras-realizadas,
+    .card-experiencia,
+    .card-escritorios {
+        width: 100%;
+        max-width: 300px;
+        min-height: 190px;
+        height: auto;
+        margin-top: 300px;
+        justify-content: center;
+    }
+
+    .card-obras-realizadas:hover,
+    .card-experiencia:hover,
+    .card-escritorios:hover {
+        width: 100%;
+        max-width: 300px;
+        min-height: 190px;
+        height: auto;
+        margin-top: 300px;
+    }
+
+    .h2 {
+        font-size: 58px;
+        padding: 8px;
+    }
+
+    .container-projetos-flex {
+        gap: 40px;
+    }
+
+    .texto-heritage {
+        margin-left: 0;
+    }
+
+    .planta-heritage {
+        width: 100%;
+        height: auto;
+        min-height: 480px;
+    }
+
+    .img-planta-heritage {
+        object-fit: contain;
+    }
+
+    .galeria-projeto {
+        min-height: 480px;
+        height: 58vh;
+    }
+
+    .galeria-container {
+        width: 92%;
+    }
+
+    .obra-item .galeria-projeto {
+        min-height: 520px;
+        height: 65vh;
+        padding: 0 48px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 170px;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        min-height: 0;
+        padding: 8px 0 10px;
+    }
+
+    nav,
+    .header-content {
+        width: 100%;
+    }
+
+    .header-content {
+        gap: 8px;
+        padding: 0 12px;
+    }
+
+    .logo {
+        width: 30%;
+    }
+
+    .nav-links {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .nav-links a:not(.btn-whatsapp) {
+        min-height: 34px;
+        padding: 6px 4px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        font-size: 12px;
+        line-height: 1.1;
+    }
+
+    .btn-whatsapp {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: min(100%, 330px);
+        min-height: 44px;
+        padding: 10px 14px;
+        font-size: 12px;
+        line-height: 1.1;
+    }
+
+    .btn-whatsapp svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    section {
+        scroll-margin-top: 170px;
+    }
+
+    .banner {
+        height: 100svh;
+        min-height: 520px;
+    }
+
+    .banner-textC,
+    .banner-textE {
+        left: 18px;
+        right: 18px;
+        bottom: 32px;
+        max-width: none;
+        font-size: 16px;
+    }
+
+    .banner-textC h1,
+    .banner-textE h1 {
+        font-size: 29px;
+        line-height: 1.1;
+    }
+
+    .banner-textC p,
+    .banner-textE p {
+        font-size: 15px;
+    }
+
+    .slide::after {
+        background: linear-gradient(to top,
+                rgba(0, 0, 0, 0.88) 0%,
+                rgba(0, 0, 0, 0.56) 34%,
+                rgba(0, 0, 0, 0.08) 68%);
+    }
+
+    .sobre-flex-container {
+        flex-direction: column;
+        gap: 26px;
+        padding: 42px 18px;
+    }
+
+    .container-somos,
+    .container-ceos {
+        width: 100%;
+        padding: 0;
+    }
+
+    .quem-somos {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .quem-somos h1 {
+        font-size: 30px;
+        line-height: 1.1;
+        margin: 0 0 12px;
+    }
+
+    .container-ceos {
+        min-height: 360px;
+        border-radius: 8px;
+    }
+
+    .container-obras-sucesso {
+        height: auto;
+        min-height: 0;
+        padding: 72px 16px;
+        background-position: center;
+    }
+
+    .container-obras-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 0;
+    }
+
+    .card-obras-realizadas,
+    .card-experiencia,
+    .card-escritorios,
+    .card-obras-realizadas:hover,
+    .card-experiencia:hover,
+    .card-escritorios:hover {
+        width: 100%;
+        max-width: 380px;
+        min-height: 148px;
+        height: auto;
+        margin-top: 0;
+        padding: 18px;
+        justify-content: center;
+        transform: none;
+    }
+
+    .card-obras-realizadas h3,
+    .card-experiencia h3,
+    .card-escritorios h3 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.25;
+    }
+
+    .h2 {
+        font-size: 48px;
+        line-height: 1;
+        padding: 0 0 8px;
+    }
+
+    .container-projetos {
+        gap: 0;
+    }
+
+    .texto-heritage {
+        padding: 36px 18px 8px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .texto-heritage h1 {
+        margin: 0 0 4px;
+        font-size: 32px;
+        line-height: 1;
+    }
+
+    .texto-heritage p {
+        margin: 0;
+    }
+
+    .container-projetos-flex {
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 14px 36px;
+    }
+
+    .planta-heritage {
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        border-radius: 8px;
+    }
+
+    .galeria-projeto,
+    .obra-item .galeria-projeto {
+        width: 100%;
+        min-height: 380px;
+        height: 64svh;
+        max-height: 560px;
+        padding: 0;
+    }
+
+    .galeria-container,
+    .obra-item .galeria-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .foto-galeria,
+    .obra-item .foto-galeria {
+        object-fit: contain;
+    }
+
+    .btn-nav,
+    .obra-item .btn-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+        background: rgba(24, 37, 50, 0.52);
+        border-color: rgba(255, 255, 255, 0.52);
+        color: #ffffff;
+    }
+
+    .btn-nav.anterior,
+    .obra-item .btn-nav.anterior {
+        left: 8px;
+    }
+
+    .btn-nav.proximo,
+    .obra-item .btn-nav.proximo {
+        right: 8px;
+    }
+
+    .galeria-contador {
+        bottom: 10px;
+        font-size: 13px;
+        padding: 5px 12px;
+    }
+
+    .ver-mais-container {
+        padding: 12px 16px 28px;
+    }
+
+    .btn-ver-mais {
+        width: min(100%, 320px);
+        min-height: 44px;
+        justify-content: center;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .outras-obras {
+        gap: 44px;
+        padding: 20px 14px 42px;
+    }
+
+    .obra-item {
+        gap: 12px;
+    }
+
+    .obra-titulo {
+        font-size: 22px;
+        line-height: 1.15;
+        margin: 0;
+    }
+
+    .site-footer {
+        padding: 34px 18px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 22px;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+
+    .footer-copyright {
+        max-width: 320px;
+        line-height: 1.5;
+    }
+
+    .footer-contacts,
     .contact-item {
         align-items: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+
+    .footer-socials a {
+        width: 44px;
+        height: 44px;
+    }
+
+    .footer-logo-img {
+        height: 34px;
+    }
+
+    .logo:hover,
+    .container-ceos:hover,
+    .btn-whatsapp:hover,
+    .btn-ver-mais:hover,
+    .btn-nav:hover,
+    .obra-item .btn-nav:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    html {
+        scroll-padding-top: 160px;
+    }
+
+    section {
+        scroll-margin-top: 160px;
+    }
+
+    .header-content {
+        padding: 0 10px;
+    }
+
+    .logo {
+        width: 30%;
+    }
+
+    .nav-links {
+        gap: 6px;
+    }
+
+    .nav-links a:not(.btn-whatsapp) {
+        min-height: 32px;
+        font-size: 11px;
+        padding: 5px 3px;
+    }
+
+    .btn-whatsapp {
+        min-height: 42px;
+        font-size: 11px;
+        padding: 9px 12px;
+    }
+
+    .banner {
+        min-height: 500px;
+    }
+
+    .banner-textC,
+    .banner-textE {
+        bottom: 26px;
+    }
+
+    .banner-textC h1,
+    .banner-textE h1 {
+        font-size: 24px;
+    }
+
+    .banner-textC p,
+    .banner-textE p {
+        font-size: 14px;
+    }
+
+    .sobre-flex-container {
+        padding: 34px 14px;
+    }
+
+    .quem-somos {
+        font-size: 15px;
+    }
+
+    .quem-somos h1 {
+        font-size: 26px;
+    }
+
+    .container-ceos {
+        min-height: 300px;
+    }
+
+    .container-obras-sucesso {
+        padding: 56px 14px;
+    }
+
+    .card-obras-realizadas,
+    .card-experiencia,
+    .card-escritorios,
+    .card-obras-realizadas:hover,
+    .card-experiencia:hover,
+    .card-escritorios:hover {
+        min-height: 132px;
+        padding: 16px 12px;
+    }
+
+    .h2 {
+        font-size: 40px;
+    }
+
+    .card-obras-realizadas h3,
+    .card-experiencia h3,
+    .card-escritorios h3 {
+        font-size: 14px;
+    }
+
+    .texto-heritage h1 {
+        font-size: 28px;
+    }
+
+    .container-projetos-flex {
+        padding: 20px 10px 30px;
+    }
+
+    .planta-heritage {
+        aspect-ratio: 3 / 4;
+    }
+
+    .galeria-projeto,
+    .obra-item .galeria-projeto {
+        min-height: 320px;
+        height: 58svh;
+        max-height: 500px;
+    }
+
+    .btn-nav,
+    .obra-item .btn-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .btn-nav.anterior,
+    .obra-item .btn-nav.anterior {
+        left: 6px;
+    }
+
+    .btn-nav.proximo,
+    .obra-item .btn-nav.proximo {
+        right: 6px;
+    }
+
+    .outras-obras {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .obra-titulo {
+        font-size: 19px;
     }
 }
